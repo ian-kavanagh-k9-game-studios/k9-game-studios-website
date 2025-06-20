@@ -1,64 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>K9 Game Studios</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/x-icon" href="favicon.ico" />
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-  <!-- Font Awesome via CDN (NO integrity attributes) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>K9 Game Studios</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <!-- Font Awesome via CDN (NO integrity attributes) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <script src="scripts/header-scroll.js"></script>
 </head>
 <body>
-  <div class="container">
-    <img src="Images/k9-game_studios_white_transparent.png" alt="K9 Game Studios Logo" class="animated logo logo-anim" />
+    <header class="site-header" id="site-header">
+        <nav class="nav-bar">
+            <a href="index.html" class="logo">
+                <img src="Images/k9-game_studios_white_transparent.png" alt="K9 Game Studios Logo" class="logo-img" />
+            </a>
+            <ul class="nav-links">
+                <li><a href="html/privacy-policy.html">Privacy</a></li>
+                <li><a href="html/cookies-policy.html">Cookies</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="home-container">
+        <img src="Images/k9-game_studios_white_transparent.png" alt="K9 Game Studios Logo" class="animated logo logo-anim" />
 
-    <h1 class="animated title-anim">K9 Game Studios</h1>
-    <p class="tagline animated tagline-anim">Coming Soon!</p>
-    
-    <!--<a href="#" class="cta-button animated cta-anim">Wishlist TBD on Steam</a>-->
+        <h1 class="animated title-anim">K9 Game Studios</h1>
+        <p class="tagline animated tagline-anim">Coming Soon!</p>
 
-	<div class="socials animated socials-anim">
-  		<a href="https://x.com/k9gamestudios" target="_blank" aria-label="Twitter">
-    			<i class="fab fa-x-twitter fa-lg"></i>
-  		</a>
+        <!--<a href="#" class="cta-button animated cta-anim">Wishlist TBD on Steam</a>-->
 
-		<a href="https://www.tiktok.com/@k9gamestudios" target="_blank" aria-label="TikTok">
-  			<i class="fab fa-tiktok fa-lg"></i>
-		</a>
+        <div class="socials animated socials-anim">
+            <a href="https://x.com/k9gamestudios" target="_blank" aria-label="Twitter">
+                <i class="fab fa-x-twitter fa-lg"></i>
+            </a>
 
-  		<a href="https://www.instagram.com/k9gamestudios" target="_blank" aria-label="Instagram">
-    			<i class="fab fa-instagram fa-lg"></i>
-  		</a>
+            <a href="https://www.tiktok.com/@k9gamestudios" target="_blank" aria-label="TikTok">
+                <i class="fab fa-tiktok fa-lg"></i>
+            </a>
 
-		<!--<a href="https://www.youtube.com/@k9gamestudios" target="_blank" aria-label="YouTube">
-  			<i class="fab fa-youtube fa-lg"></i>
-		</a>-->
-	</div> 
-  </div>
-<footer>
-  <small>
-    © 2025 K9 Game Studios Ltd. |
-    <a href="html/privacy-policy.html">Privacy Policy</a> |
-    <a href="html/cookies-policy.html">Cookies</a>
-  </small>
-</footer>
+            <a href="https://www.instagram.com/k9gamestudios" target="_blank" aria-label="Instagram">
+                <i class="fab fa-instagram fa-lg"></i>
+            </a>
 
-<div id="cookie-banner">
-  <p>
-    We use cookies to improve your experience and analyze site traffic.
-    By clicking “Accept”, you consent to our use of cookies.
-    <a href="html/cookies-policy.html">Learn more</a>.
-  </p>
-  <div class="cookie-buttons">
-    <button id="accept-cookies">Accept</button>
-    <button id="decline-cookies">Decline</button>
-  </div>
-</div>
-<script src="scripts/cookie-banner.js"></script>
-<link rel="stylesheet" href="styles/cookie-banner.css">
+            <!--<a href="https://www.youtube.com/@k9gamestudios" target="_blank" aria-label="YouTube">
+                <i class="fab fa-youtube fa-lg"></i>
+            </a>-->
+        </div>
+    </div>
+    <footer class="site-footer">
+        <p>&copy; 2025 K9 Game Studios Ltd. All rights reserved.</p>
+    </footer>
 
+    <div id="cookie-banner">
+        <p>
+            We use cookies to improve your experience and analyze site traffic.
+            By clicking “Accept”, you consent to our use of cookies.
+            <a href="html/cookies-policy.html">Learn more</a>.
+        </p>
+        <div class="cookie-buttons">
+            <button id="accept-cookies">Accept</button>
+            <button id="decline-cookies">Decline</button>
+        </div>
+    </div>
+    <script src="scripts/cookie-banner.js"></script>
+    <link rel="stylesheet" href="styles/cookie-banner.css">
 </body>
 </html>
 
