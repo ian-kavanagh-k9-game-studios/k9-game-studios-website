@@ -1,13 +1,21 @@
-// JavaScript source code
 // cookie-banner.js
-function setCookie(name, value, days) {
-    const d = new Date();
-    d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
-    document.cookie = name + "=" + value + ";expires=" + d.toUTCString() + ";path=/";
-}
 
-function getCookie(name) {
-    return document.cookie.split('; ').find(row => row.startsWith(name + '='))?.split('=')[1];
+function loadGoogleAnalytics() {
+    if (window.gtag) return; // Prevent loading twice
+
+    const script1 = document.createElement('script');
+    script1.async = true;
+    script1.src = 'https://www.googletagmanager.com/gtag/js?id=G-PWX4LMPVFC';
+    document.head.appendChild(script1);
+
+    const script2 = document.createElement('script');
+    script2.innerHTML = `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-PWX4LMPVFC');
+  `;
+    document.head.appendChild(script2);
 }
 
 window.addEventListener('DOMContentLoaded', () => {
@@ -15,40 +23,25 @@ window.addEventListener('DOMContentLoaded', () => {
     const acceptBtn = document.getElementById('accept-cookies');
     const declineBtn = document.getElementById('decline-cookies');
 
-    if (!getCookie('cookieConsent')) {
-        banner.style.display = 'flex';
+    const consent = localStorage.getItem('cookiesAccepted');
+
+    if (!consent) {
+        banner.style.display = 'flex'; // Show banner if no consent
     } else {
-        if (getCookie('cookieConsent') === 'accepted') {
-            loadGoogleAnalytics();
+        if (consent === 'true') {
+            loadGoogleAnalytics(); // Load GA if previously accepted
         }
+        banner.style.display = 'none'; // Hide banner if consent was given or declined
     }
 
     acceptBtn.onclick = () => {
-        setCookie('cookieConsent', 'accepted', 180);
+        localStorage.setItem('cookiesAccepted', 'true');
         banner.style.display = 'none';
         loadGoogleAnalytics();
     };
 
     declineBtn.onclick = () => {
-        setCookie('cookieConsent', 'declined', 180);
+        localStorage.setItem('cookiesAccepted', 'false');
         banner.style.display = 'none';
     };
-
-function loadGoogleAnalytics() {
-     if (window.gtag) return; // Prevent double-loading
-
-     const scriptTag1 = document.createElement('script');
-     scriptTag1.async = true;
-     scriptTag1.src = 'https://www.googletagmanager.com/gtag/js?id=G-PWX4LMPVFC';
-     document.head.appendChild(scriptTag1);
-
-     const scriptTag2 = document.createElement('script');
-     scriptTag2.innerHTML = `
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-PWX4LMPVFC');
-  `;
-        document.head.appendChild(scriptTag2);
-    }
 });
