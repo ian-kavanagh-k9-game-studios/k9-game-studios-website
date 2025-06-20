@@ -68,7 +68,7 @@ h1 {
 }
 
 .socials a:hover {
-  color: #00cfe0;
+    color: var(--accent-color);   
 }
 
 /* Social Icons Styling */
@@ -87,7 +87,7 @@ h1 {
 
 .socials a:hover {
   transform: scale(1.2);
-  color: #ff004f; /* You can change this per brand */
+  color: var(--accent-color);
 }
 
 /* ===== Footer ===== */
@@ -166,4 +166,11 @@ footer {
 .socials-anim {
   animation: fadeZoom 0.4s ease-out forwards;
   animation-delay: 0.9s;
+}
+
+:root {
+    --font: 'Poppins', sans-serif;
+    --text-color: #ffffff;
+    --banner-bg: #0e0e0e;
+    --accent-color: #00c2ff;
 }
