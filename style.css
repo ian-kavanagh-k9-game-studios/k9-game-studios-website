@@ -1,182 +1,3 @@
-/* ===== Base Layout ===== */
-body {
-    background-color: #121212;
-    color: #eee;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-/* Home-specific styling */
-.home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    text-align: center;
-}
-
-/* Policy/legal pages */
-.policy-container {
-    max-width: 900px;
-    margin: 2rem auto 4rem auto;
-    padding: 0 1rem;
-    line-height: 1.6;
-}
-    
- /* ===== Logo, Title, Tagline ===== */
- .logo {
-  max-width: 200px;
-  height: auto;
-  margin-bottom: 1.5rem;
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.tagline {
-  font-size: 1.2rem;
-  color: #cccccc;
-  margin-bottom: 2rem;
-}
-
-/* ===== CTA Button ===== */
-.cta-button {
-  background-color: #00f0ff;
-  color: #0f0f0f;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  display: inline-block;
-  margin-bottom: 2rem;
-}
-
-.cta-button:hover {
-  background-color: #00cfe0;
-  transform: translateY(-2px);
-}
-
-/* ===== Social Links ===== */
-.socials {
-  margin-top: 1rem;
-}
-
-.socials a {
-  color: #00f0ff;
-  text-decoration: none;
-  margin: 0 1rem;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-.socials a:hover {
-    color: var(--accent-color);   
-}
-
-/* Social Icons Styling */
-.socials {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  margin-top: 1rem;
-}
-
-.socials a {
-  color: white;
-  font-size: 1.5rem;
-  transition: transform 0.2s ease, color 0.2s ease;
-}
-
-.socials a:hover {
-  transform: scale(1.2);
-  color: var(--accent-color);
-}
-
-/* ===== Footer ===== */
-footer {
-  text-align: center;
-  padding: 1rem;
-  font-size: 0.85rem;
-  background-color: #1a1a1a;
-  color: #888;
-}
-
-/* ===== Animation Keyframes ===== */
-@keyframes fadeZoom {
-  0% {
-    opacity: 0;
-    transform: scale(0.95);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes slideInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideFade {
-  0% {
-    opacity: 0;
-    transform: translateY(10px) scale(0.98);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-/* ===== Element Animations ===== */
-.animated {
-  opacity: 0;
-}
-
-/* Logo */
-.logo-anim {
-  animation: fadeZoom 0.5s ease-out forwards;
-  animation-delay: 0.1s;
-}
-
-/* Title */
-.title-anim {
-  animation: slideInUp 0.5s ease-out forwards;
-  animation-delay: 0.3s;
-}
-
-/* Tagline */
-.tagline-anim {
-  animation: slideInUp 0.5s ease-out forwards;
-  animation-delay: 0.5s;
-}
-
-/* CTA Button */
-.cta-anim {
-  animation: slideFade 0.5s ease-out forwards;
-  animation-delay: 0.7s;
-}
-
-/* Social Links */
-.socials-anim {
-  animation: fadeZoom 0.4s ease-out forwards;
-  animation-delay: 0.9s;
-}
-
 :root {
     --font: 'Poppins', sans-serif;
     --text-color: #ffffff;
@@ -184,7 +5,18 @@ footer {
     --accent-color: #00c2ff;
 }
 
-/* === HEADER / NAV === */
+/* ===== Base Layout ===== */
+body {
+    background-color: #121212;
+    color: #eee;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Header / Nav ===== */
 .site-header {
     background-color: #121212;
     border-bottom: 1px solid #222;
@@ -197,9 +29,9 @@ footer {
     will-change: transform;
 }
 
-.site-header.hide {
-    transform: translateY(-100%);
-}
+    .site-header.hide {
+        transform: translateY(-100%);
+    }
 
 .nav-bar {
     max-width: 1200px;
@@ -210,68 +42,138 @@ footer {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #fff;
     text-decoration: none;
     letter-spacing: 1px;
-    transition: color 0.3s;
+    transition: color 0.3s ease;
 }
 
-.logo:hover {
-  color: var(--accent-color);
-}
+    .logo:hover {
+        color: var(--accent-color);
+    }
 
+/* Nav Links */
 .nav-links {
     list-style: none;
     display: flex;
     gap: 2rem;
+    margin: 0;
+    padding: 0;
 }
 
-.nav-links a {
-    text-decoration: none;
-    color: #ccc;
-    font-weight: 500;
-    transition: color 0.2s ease-in-out;
-}
+    .nav-links a {
+        text-decoration: none;
+        color: var(--accent-color); /* default color */
+        font-weight: 500;
+        transition: color 0.2s ease-in-out;
+    }
 
-.nav-links a:hover {
-    color: var(--accent-color);
- }
+        /* Hover/focus: white */
+        .nav-links a:hover,
+        .nav-links a:focus {
+            color: #fff;
+            outline: none;
+        }
 
+        /* Active (pressed/clicked): accent */
+        .nav-links a:active {
+            color: var(--accent-color);
+        }
+
+        /* Visited: softer grey */
+        .nav-links a:visited {
+            color: #ccc;
+        }
+
+/* Mailto links - keep consistent with nav links */
 a[href^="mailto:"] {
     color: var(--accent-color);
     text-decoration: underline;
+    transition: color 0.2s ease-in-out;
 }
 
-a[href^="mailto:"]:hover {
-    color: #ffffff;
- }
+    a[href^="mailto:"]:hover,
+    a[href^="mailto:"]:focus {
+        color: #fff;
+    }
 
-a:link {
-    color: var(--accent-color);
-    text-decoration: none;
-}
+    a[href^="mailto:"]:active {
+        color: var(--accent-color);
+    }
 
-a:visited {
-    color: #ccc;
-}
-
-a:hover,
-a:focus {
-    color: #ffffff;
-}
-
-a:active {
-    color: var(--accent-color);
-}
-
+/* Logo image */
 .logo-img {
     height: 64px; /* Adjust based on your logo */
     display: block;
 }
 
-/* === FOOTER === */
+/* ===== Home Page ===== */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.logo {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 1.5rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.tagline {
+    font-size: 1.2rem;
+    color: #cccccc;
+    margin-bottom: 2rem;
+}
+
+/* ===== CTA Button ===== */
+.cta-button {
+    background-color: var(--accent-color);
+    color: #0f0f0f;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+    .cta-button:hover {
+        background-color: #00cfe0;
+        transform: translateY(-2px);
+    }
+
+/* ===== Social Links ===== */
+.socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 1rem;
+}
+
+    .socials a {
+        color: #fff;
+        font-size: 1.5rem;
+        transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+        .socials a:hover {
+            transform: scale(1.2);
+            color: var(--accent-color);
+        }
+
+/* ===== Footer ===== */
 .site-footer {
     background-color: #121212;
     border-top: 1px solid #222;
@@ -282,7 +184,102 @@ a:active {
     margin-top: 4rem;
 }
 
-.site-footer p {
-    margin: 0;
-    color: #aaa;
+    .site-footer p {
+        margin: 0;
+        color: #aaa;
+    }
+
+/* ===== Animation Keyframes ===== */
+@keyframes fadeZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
+
+@keyframes slideInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideFade {
+    0% {
+        opacity: 0;
+        transform: translateY(10px) scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ===== Element Animations ===== */
+.animated {
+    opacity: 0;
+}
+
+.logo-anim {
+    animation: fadeZoom 0.5s ease-out forwards;
+    animation-delay: 0.1s;
+}
+
+.title-anim {
+    animation: slideInUp 0.5s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.tagline-anim {
+    animation: slideInUp 0.5s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+.cta-anim {
+    animation: slideFade 0.5s ease-out forwards;
+    animation-delay: 0.7s;
+}
+
+.socials-anim {
+    animation: fadeZoom 0.4s ease-out forwards;
+    animation-delay: 0.9s;
+}
+
+/* Policy/legal pages */
+.policy-container {
+    max-width: 900px;
+    margin: 2rem auto 4rem auto;
+    padding: 0 1rem;
+    line-height: 1.6;
+}
+
+.custom-policy-link:link {
+    color: var(--accent-color); /* unvisited */
+    text-decoration: none;
+}
+
+.custom-policy-link:visited {
+    color: #ccc; /* visited color - grey instead of purple */
+}
+
+.custom-policy-link:hover,
+.custom-policy-link:focus {
+    color: #fff; /* hover/focus color */
+    outline: none;
+}
+
+.custom-policy-link:active {
+    color: var(--accent-color);
+}
+
